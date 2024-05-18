@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images with Hover Text</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            position: relative;
+            flex: 1 1 45%; /* responsive bo'lishi uchun */
+            margin: 10px;
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 20px;
+        }
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .image-container {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/amir temur (3).jpg" alt="Image 1">
+        <div class="overlay">AMIR TEMUR FAOLIYATI</div>
+    </div>
+    <div class="image-container">
+        <img src="img/shajarasi.jpg" alt="Image 2">
+        <div class="overlay">TEMURIYLAR SHAJARASI</div>
+    </div>
+    <div class="image-container">
+        <img src="img/muzeyi.jpg" alt="Image 3">
+        <div class="overlay">AMIR TEMUR MUZEYI</div>
+    </div>
+    <div class="image-container">
+        <img src="img/haykal.jpg" alt="Image 4">
+        <div class="overlay">AMIR TEMUR HAYKALLARI</div>
+    </div>
+</body>
+</html>
